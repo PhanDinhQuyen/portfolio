@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Providers from "@/components/providers";
 import Header from "@/components/header";
-const inter = Inter({ subsets: ["latin", "vietnamese"] });
+// const inter = Inter({ subsets: ["latin", "vietnamese"] });
+
+import { inter } from "../libs/fonts";
 
 export const metadata: Metadata = {
   title: "LouisPhan HomePage",

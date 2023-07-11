@@ -6,7 +6,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
       as='main'
       paddingTop='14'
       position='relative'
-      maxW='container.sm'
+      maxW='container.md'
     >
       {children}
     </Container>
