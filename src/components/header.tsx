@@ -1,8 +1,20 @@
 "use client";
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  useColorModeValue,
+  Menu,
+  MenuButton,
+  IconButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+
+import { Link } from "@chakra-ui/next-js";
+
+import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./themeSwitch";
 import NavBar from "./navBar";
-
+import { linkSource as url } from "./navBar";
 import Logo from "./logo";
 export default function Header() {
   return (
@@ -27,7 +39,40 @@ export default function Header() {
           <Logo />
           <NavBar />
         </Box>
-        <ThemeToggleButton />
+
+        <Box>
+          <ThemeToggleButton />
+
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+            <Menu isLazy id='navbar-menu'>
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant='outline'
+                aria-label='Options'
+              />
+              <MenuList>
+                <MenuItem as={Link} href='/'>
+                  About
+                </MenuItem>
+
+                <MenuItem as={Link} href={"skills"}>
+                  Skills
+                </MenuItem>
+
+                <MenuItem as={Link} href='/uses'>
+                  Uses
+                </MenuItem>
+                <MenuItem as={Link} href='/games'>
+                  Games
+                </MenuItem>
+                <MenuItem as={Link} href={url} target='_blank'>
+                  Source
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

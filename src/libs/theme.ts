@@ -1,14 +1,4 @@
-import { extendTheme, StyleFunctionProps } from "@chakra-ui/react";
-
-import { mode } from "@chakra-ui/theme-tools";
-
-const styles = {
-  global: (props: StyleFunctionProps) => ({
-    body: {
-      bg: mode("#f0e7db", "#202023")(props),
-    },
-  }),
-};
+import { extendTheme } from "@chakra-ui/react";
 
 const colors = {
   grassTeal: "#88ccca",
@@ -20,5 +10,4 @@ const config = {
 };
 
 const theme = extendTheme({ config, colors });
-console.log();
 export default theme;

@@ -29,9 +29,10 @@ const Logo = () => {
         <FootprintIcon />
         <Text
           color={useColorModeValue("gray.800", "whiteAlpha.900")}
-          className={mPlusRoundedOneC.className}
+          fontFamily={mPlusRoundedOneC.style.fontFamily}
           fontWeight='bold'
           ml={3}
+          minW='max-content'
         >
           Louis Phan
         </Text>

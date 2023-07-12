@@ -1,17 +1,16 @@
 import { Container } from "@chakra-ui/react";
 
-import Loader from "@/components/dogLoader";
-import dynamic from "next/dynamic";
-
-const LazyVoxelDog = dynamic(() => import("../components/dog"), {
-  ssr: false,
-  loading: () => <Loader />,
-});
-export default function Main({ children }: { children: React.ReactNode }) {
+export default function Main({
+  children,
+  p,
+}: {
+  children: React.ReactNode;
+  p: boolean;
+}) {
   return (
     <Container
-      as='main'
-      paddingTop='14'
+      as='div'
+      paddingTop={p ? "14" : 0}
       position='relative'
       maxW='container.md'
     >

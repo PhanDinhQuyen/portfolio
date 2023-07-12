@@ -1,10 +1,10 @@
 "use client";
-import React, { HTMLAttributeAnchorTarget } from "react";
-import { List, ListItem } from "@chakra-ui/react";
+import React, { Fragment, HTMLAttributeAnchorTarget } from "react";
+import { List } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 
-const linkSource = `https://github.com/PhanDinhQuyen/portfolio`;
+export const linkSource = `https://github.com/PhanDinhQuyen/portfolio`;
 
 import { usePathname } from "next/navigation";
 
@@ -36,20 +36,26 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItem) => {
 
 function NavBar() {
   const pathName = usePathname();
-  console.log(pathName);
   const Links = [`skills`, `uses`, `games`];
 
   return (
-    <List fontSize='16' as='nav' display='flex' gap='3'>
-      {Links.map((link) => (
-        <LinkItem href={`/${link}`} target='_self' key={link} path={pathName}>
-          {link}
+    <Fragment>
+      <List
+        fontSize='16'
+        as='nav'
+        display={{ base: "none", md: "flex" }}
+        gap='3'
+      >
+        {Links.map((link) => (
+          <LinkItem href={`/${link}`} target='_self' key={link} path={pathName}>
+            {link}
+          </LinkItem>
+        ))}
+        <LinkItem path={null} href={linkSource} target='_blank'>
+          source
         </LinkItem>
-      ))}
-      <LinkItem path={null} href={linkSource} target='_blank'>
-        source
-      </LinkItem>
-    </List>
+      </List>
+    </Fragment>
   );
 }
 
