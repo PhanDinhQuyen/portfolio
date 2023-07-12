@@ -1,11 +1,19 @@
+"use client";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import Providers from "@/components/providers";
 import Header from "@/components/header";
-// const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 import { inter } from "../libs/fonts";
 
+import Loader from "@/components/dogLoader";
+import dynamic from "next/dynamic";
+
+const LazyVoxelDog = dynamic(() => import("../components/dog"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
+import Main from "@/components/main";
 export const metadata: Metadata = {
   title: "LouisPhan HomePage",
   description: `LouisPhan's website`,
@@ -21,6 +29,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Header />
+          <Main>
+            <LazyVoxelDog />
+          </Main>
           {children}
         </Providers>
       </body>
