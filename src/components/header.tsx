@@ -16,10 +16,12 @@ import ThemeToggleButton from "./themeSwitch";
 import NavBar from "./navBar";
 import { linkSource as url } from "./navBar";
 import Logo from "./logo";
+import ProcessBar from "./processBar";
 export default function Header() {
   return (
     <Box
       backgroundColor={useColorModeValue("#ffffff40", "#20202380")}
+      blur='base'
       w='full'
       zIndex='2'
       position='fixed'
@@ -74,6 +76,7 @@ export default function Header() {
           </Box>
         </Box>
       </Box>
+      <ProcessBar />
     </Box>
   );
 }

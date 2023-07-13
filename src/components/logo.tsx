@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Text, useColorModeValue } from "@chakra-ui/react";
 import FootprintIcon from "../assets/footPrint";
 import styled from "@emotion/styled";
-import { mPlusRoundedOneC } from "@/libs/fonts";
+import { mPlusRoundedOneC, pacifico } from "@/libs/fonts";
 const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;
@@ -29,8 +29,9 @@ const Logo = () => {
         <FootprintIcon />
         <Text
           color={useColorModeValue("gray.800", "whiteAlpha.900")}
-          fontFamily={mPlusRoundedOneC.style.fontFamily}
+          fontFamily={pacifico.style.fontFamily}
           fontWeight='bold'
+          fontSize='2xl'
           ml={3}
           minW='max-content'
         >

@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/footer";
 import Main from "@/components/main";
 import { AnimatePresence } from "framer-motion";
 
@@ -8,7 +9,7 @@ if (typeof window !== "undefined") {
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <Main p={false}>
+    <Main as={undefined} p={false}>
       <AnimatePresence
         mode='wait'
         initial={true}
@@ -20,6 +21,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       >
         {children}
       </AnimatePresence>
+      <Footer />
     </Main>
   );
 }

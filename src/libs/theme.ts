@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react";
-
 const colors = {
   grassTeal: "#88ccca",
 };

@@ -1,11 +1,5 @@
-import { Inter, M_PLUS_Rounded_1c, Poppins, Pacifico } from "next/font/google";
+import { Inter, Poppins, Pangolin } from "next/font/google";
 export const inter = Inter({ subsets: ["latin", "vietnamese"] });
-
-export const mPlusRoundedOneC = M_PLUS_Rounded_1c({
-  subsets: ["latin", "vietnamese"],
-  weight: ["100", "300", "400", "500", "700"],
-  display: "swap",
-});
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -13,7 +7,7 @@ export const poppins = Poppins({
   display: "swap",
 });
 
-export const pacifico = Pacifico({
+export const pacifico = Pangolin({
   subsets: ["latin", "vietnamese"],
   weight: ["400"],
   display: "swap",

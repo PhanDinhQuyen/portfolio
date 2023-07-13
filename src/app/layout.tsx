@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 
 import Providers from "@/components/providers";
 import Header from "@/components/header";
+import "./global.css";
 
-import { inter, mPlusRoundedOneC, poppins } from "../libs/fonts";
+import { poppins } from "../libs/fonts";
 
 import Loader from "@/components/dogLoader";
 import dynamic from "next/dynamic";
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Providers>
           <Header />
-          <Main p={true}>
+          <Main as='main' p={true}>
             <LazyVoxelDog />
             {children}
           </Main>
