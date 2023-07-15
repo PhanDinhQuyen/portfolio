@@ -11,11 +11,19 @@ import {
   BiLogoMongodb,
   BiLogoFirebase,
   BiLogoGraphql,
+  BiLogoDocker,
 } from "react-icons/bi";
 import { DiRedis } from "react-icons/di";
-import { TbBrandNextjs, TbBrandSocketIo } from "react-icons/tb";
+import {
+  TbBrandNextjs,
+  TbBrandSocketIo,
+  TbBrandGit,
+  TbBrandVscode,
+} from "react-icons/tb";
 import { CharkUiIcon } from "@/components/icons/charkaIcon";
 import { MaterialUiIcon } from "@/components/icons/materialUiIcon";
+import { FcLinux } from "react-icons/fc";
+import { PostManIcon } from "@/components/icons/postManIcon";
 
 export const skills = {
   languages: [
@@ -109,7 +117,32 @@ export const skills = {
     {
       name: "NextJS",
       icon: TbBrandNextjs,
-      color: "blue.500",
+      color: "blackAlpha.800",
+    },
+    {
+      name: "Docker",
+      icon: BiLogoDocker,
+      color: "cyan.500",
+    },
+    {
+      name: "Postman",
+      icon: PostManIcon,
+      color: "orange.500",
+    },
+    {
+      name: "Linux",
+      icon: FcLinux,
+      color: "purple.500",
+    },
+    {
+      name: "Git",
+      icon: TbBrandGit,
+      color: "#f05539",
+    },
+    {
+      name: "VSCode",
+      icon: TbBrandVscode,
+      color: "cyan.500",
     },
   ],
 };

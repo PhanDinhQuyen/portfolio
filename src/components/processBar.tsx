@@ -1,7 +1,7 @@
 import { useColorModeValue } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 const BoxProcessBar = styled.div`
@@ -14,7 +14,6 @@ const BoxProcessBar = styled.div`
 
 export default function ProcessBar() {
   const pathName = usePathname();
-  console.log(pathName);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -24,7 +23,7 @@ export default function ProcessBar() {
 
   useEffect(() => {
     scaleX.set(0);
-    window.scrollTo({
+    global.scrollTo({
       top: 0,
       behavior: "smooth",
     });

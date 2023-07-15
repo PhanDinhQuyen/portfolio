@@ -10,7 +10,7 @@ export const CharkUiIcon = (props: React.SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     {...props}
     style={{
-      padding: "0.4rem",
+      padding: "0.3rem",
       color: `rgb(67, 198, 192)`,
     }}
   >

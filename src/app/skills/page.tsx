@@ -22,7 +22,7 @@ export default function Skills() {
 
       <Section delay={0.4}>
         <HeadingTitle fontSize='18'>
-          <Icon as={ChevronRightIcon} />
+          <Icon id='#fontend' as={ChevronRightIcon} />
           FontEnd
         </HeadingTitle>
         <GirdItems list={skills.client} />
@@ -30,10 +30,18 @@ export default function Skills() {
 
       <Section delay={0.6}>
         <HeadingTitle fontSize='18'>
-          <Icon as={ChevronRightIcon} />
+          <Icon id='#backend' as={ChevronRightIcon} />
           BackEnd
         </HeadingTitle>
         <GirdItems list={skills.server} />
+      </Section>
+
+      <Section delay={0.8}>
+        <HeadingTitle fontSize='18'>
+          <Icon as={ChevronRightIcon} />
+          Tools, IDEs, other...
+        </HeadingTitle>
+        <GirdItems list={skills.other} />
       </Section>
     </Section>
   );

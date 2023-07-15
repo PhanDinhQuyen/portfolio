@@ -15,7 +15,6 @@ import { Link } from "@chakra-ui/next-js";
 import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
 import OnWeb from "@/components/web";
-
 const urlGenshin = `https://enka.network/u/804579031/`;
 const urlCodeWar = `https://www.codewars.com/users/PhanDinhQuyen`;
 const email = `phanquyen7799@gmail.com`;
@@ -73,22 +72,34 @@ export default function Home() {
             </Heading>
             <Text as='p' wordBreak='break-word'>
               Web Developer{" "}
-              <Text as='span' minWidth='max-content' wordBreak='break-word'>
-                (FontEnd / BackEnd)
+              <Text
+                fontWeight='500'
+                as='span'
+                minWidth='max-content'
+                wordBreak='break-word'
+              >
+                (
+                <Link color='pink.500' href='/skills'>
+                  FontEnd
+                </Link>
+                /
+                <Link color='pink.500' href='/skills'>
+                  BackEnd
+                </Link>
+                )
               </Text>
             </Text>
           </Box>
 
           <Avatar
-            as={"div"}
             border='2px'
-            borderColor={"red"}
             loading='lazy'
             w='32'
             h='32'
             name='louis phan'
             marginBottom='5'
             src={avatar.src}
+            userSelect='none'
           />
         </Box>
         <Bio />
