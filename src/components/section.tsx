@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { chakra, shouldForwardProp } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-const StyledDiv = chakra(motion.div, {
+const StyledSection = chakra(motion.section, {
   shouldForwardProp: (props) => {
     return shouldForwardProp(props) || props === "transition";
   },
@@ -15,7 +15,7 @@ const Section = ({
   children: ReactNode;
   delay: number;
 }) => (
-  <StyledDiv
+  <StyledSection
     initial={{ y: 10, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition='0.8'
@@ -23,7 +23,7 @@ const Section = ({
     mb={6}
   >
     {children}
-  </StyledDiv>
+  </StyledSection>
 );
 
 export default Section;

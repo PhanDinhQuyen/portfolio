@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { Text, useColorModeValue } from "@chakra-ui/react";
-import FootprintIcon from "../assets/footPrint";
+import FootprintIcon from "./icons/footPrint";
 import styled from "@emotion/styled";
-import { mPlusRoundedOneC, pacifico } from "@/libs/fonts";
+import { pacifico } from "@/libs/fonts";
 const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;

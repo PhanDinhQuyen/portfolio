@@ -58,7 +58,7 @@ export default function Header() {
                   About
                 </MenuItem>
 
-                <MenuItem as={Link} href={"skills"}>
+                <MenuItem as={Link} href='/skills'>
                   Skills
                 </MenuItem>
 

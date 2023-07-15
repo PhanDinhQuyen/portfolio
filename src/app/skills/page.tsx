@@ -1,35 +1,40 @@
 "use client";
-import { HeadingTitle } from "@/components/bio";
+import { HeadingTitle } from "@/app/bio";
+import GirdItems from "@/components/girdItems";
 import Section from "@/components/section";
-import { Icon, List, ListItem, Text } from "@chakra-ui/react";
-import { BiLogoJavascript, BiLogoReact, BiLogoNodejs } from "react-icons/bi";
-const skills = [
-  {
-    name: "React",
-    icon: BiLogoReact,
-  },
-  {
-    name: "Javascript",
-    icon: BiLogoJavascript,
-  },
-  {
-    name: "Node",
-    icon: BiLogoNodejs,
-  },
-];
-
+import { skills } from "@/constants/skills";
+// import Loading from "@/components/loading";
+import { ChevronRightIcon, Icon } from "@chakra-ui/icons";
 export default function Skills() {
+  // return <Loading />;
+
   return (
     <Section delay={1}>
-      <HeadingTitle>Skills</HeadingTitle>
-      <List display='grid' gridTemplateColumns='1fr 1fr 1fr' gridGap='2'>
-        {skills.map((skill) => (
-          <ListItem key={skill.name}>
-            <Icon fontSize='6xl' as={skill.icon} />
-            <Text>{skill.name}</Text>
-          </ListItem>
-        ))}
-      </List>
+      <HeadingTitle fontSize={undefined}>Skills</HeadingTitle>
+
+      <Section delay={0.2}>
+        <HeadingTitle fontSize='18'>
+          <Icon as={ChevronRightIcon} />
+          Languages
+        </HeadingTitle>
+        <GirdItems list={skills.languages} />
+      </Section>
+
+      <Section delay={0.4}>
+        <HeadingTitle fontSize='18'>
+          <Icon as={ChevronRightIcon} />
+          FontEnd
+        </HeadingTitle>
+        <GirdItems list={skills.client} />
+      </Section>
+
+      <Section delay={0.6}>
+        <HeadingTitle fontSize='18'>
+          <Icon as={ChevronRightIcon} />
+          BackEnd
+        </HeadingTitle>
+        <GirdItems list={skills.server} />
+      </Section>
     </Section>
   );
 }

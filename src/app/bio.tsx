@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import Section from "./section";
+import Section from "../components/section";
 import { ReactNode } from "react";
 import { pacifico } from "@/libs/fonts";
 const BioSection = styled(Box)`
@@ -13,7 +13,13 @@ const BioYear = styled.span`
   margin-right: 1em;
 `;
 
-export const HeadingTitle = ({ children }: { children: ReactNode }) => {
+export const HeadingTitle = ({
+  children,
+  fontSize,
+}: {
+  children: ReactNode;
+  fontSize: string | undefined;
+}) => {
   return (
     <Heading
       as='h3'
@@ -22,7 +28,7 @@ export const HeadingTitle = ({ children }: { children: ReactNode }) => {
       textUnderlineOffset='6px'
       textDecorationThickness='4px'
       textDecorationColor='#525252'
-      fontSize='x-large'
+      fontSize={fontSize || "x-large"}
       variant='section-title'
       className={pacifico.className}
     >
@@ -34,7 +40,7 @@ export const HeadingTitle = ({ children }: { children: ReactNode }) => {
 export default function Bio() {
   return (
     <Section delay={0.2}>
-      <HeadingTitle>Bio</HeadingTitle>
+      <HeadingTitle fontSize={undefined}>Bio</HeadingTitle>
       <BioSection>
         <BioYear>2002</BioYear>
         Born in DakLak , Viet Nam.

@@ -10,7 +10,7 @@ import {
 import avatar from "../assets/avatar.jpg";
 import { pacifico } from "@/libs/fonts";
 import Section from "@/components/section";
-import Bio, { HeadingTitle } from "@/components/bio";
+import Bio, { HeadingTitle } from "@/app/bio";
 import { Link } from "@chakra-ui/next-js";
 import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
@@ -94,7 +94,7 @@ export default function Home() {
         <Bio />
 
         <Section delay={1}>
-          <HeadingTitle>i ♥</HeadingTitle>
+          <HeadingTitle fontSize={undefined}>i ♥</HeadingTitle>
           <Text textIndent='1em'>
             Art,{" "}
             <Link color='pink.500' href={urlCodeWar}>
@@ -108,7 +108,7 @@ export default function Home() {
         </Section>
 
         <Section delay={1}>
-          <HeadingTitle>On the web</HeadingTitle>
+          <HeadingTitle fontSize={undefined}>On the web</HeadingTitle>
           <Box display='flex' flexDir='column'>
             {webs.map((web) => {
               const Icon = web.icon;
@@ -124,7 +124,7 @@ export default function Home() {
         </Section>
 
         <Section delay={1}>
-          <HeadingTitle>Contact</HeadingTitle>
+          <HeadingTitle fontSize={undefined}>Contact</HeadingTitle>
 
           <Box display='flex' justifyContent='center' alignItems='center'>
             <Button gap='2' as={"a"} target='_blank' href={`mailto:${email}`}>
