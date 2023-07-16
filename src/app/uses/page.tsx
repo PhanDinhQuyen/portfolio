@@ -11,6 +11,8 @@ import {
   firstVsCodeImage,
 } from "@/assets";
 
+import { urls } from "@/constants/uses";
+
 import WrapperImage from "@/components/wrapperImage";
 import { Link } from "@chakra-ui/next-js";
 
@@ -25,7 +27,11 @@ export default function Uses() {
           My terminal setup
         </HeadingTitle>
         <Text marginY='2em' textIndent='2em'>
-          I am using oh-my-posh to configure my terminal
+          I am using&nbsp;
+          <Link color='purple.400' href={urls.urlOhMyPosh}>
+            oh-my-posh
+          </Link>
+          &nbsp;to configure my terminal
         </Text>
 
         <WrapperImage text='My terminal' image={firstTerminalImage} />
@@ -48,7 +54,7 @@ export default function Uses() {
             color='pink.500'
             fontStyle='italic'
             target='_blank'
-            href='https://github.com/PhanDinhQuyen/settings'
+            href={urls.urlGit}
           >
             here
           </Link>
