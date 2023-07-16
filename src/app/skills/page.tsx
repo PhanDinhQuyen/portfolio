@@ -1,18 +1,23 @@
 "use client";
+
 import { ChevronRightIcon, Icon } from "@chakra-ui/icons";
-import { HeadingTitle } from "@/app/bio";
+
+import { HeadingTitle } from "@/components/headingTitle";
 import { skills } from "@/constants/skills";
 
 import GirdItems from "@/components/girdItems";
 import Section from "@/components/section";
 
 import Description from "./description";
+
 export default function Skills() {
   return (
     <Section delay={1}>
+      {/* delay 0.2s */}
       <Description />
-      <HeadingTitle fontSize={undefined}>Skills</HeadingTitle>
-      <Section delay={0.2}>
+
+      <HeadingTitle>Skills</HeadingTitle>
+      <Section delay={0.4}>
         <HeadingTitle fontSize='18'>
           <Icon as={ChevronRightIcon} />
           Languages
@@ -20,7 +25,7 @@ export default function Skills() {
         <GirdItems list={skills.languages} />
       </Section>
 
-      <Section delay={0.4}>
+      <Section delay={0.6}>
         <HeadingTitle fontSize='18'>
           <Icon id='#fontend' as={ChevronRightIcon} />
           FontEnd
@@ -28,7 +33,7 @@ export default function Skills() {
         <GirdItems list={skills.client} />
       </Section>
 
-      <Section delay={0.6}>
+      <Section delay={0.8}>
         <HeadingTitle fontSize='18'>
           <Icon id='#backend' as={ChevronRightIcon} />
           BackEnd
@@ -36,7 +41,7 @@ export default function Skills() {
         <GirdItems list={skills.server} />
       </Section>
 
-      <Section delay={0.8}>
+      <Section delay={1}>
         <HeadingTitle fontSize='18'>
           <Icon as={ChevronRightIcon} />
           Tools, IDEs, other...

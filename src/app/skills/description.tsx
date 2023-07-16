@@ -1,5 +1,5 @@
 import { Text, Highlight } from "@chakra-ui/react";
-import { HeadingTitle } from "../bio";
+import { HeadingTitle } from "@/components/headingTitle";
 
 import Section from "@/components/section";
 

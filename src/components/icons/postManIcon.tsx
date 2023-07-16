@@ -1,5 +1,4 @@
-import React from "react";
-import postman from "../../assets/postman.png";
+import { postManIcon } from "@/assets";
 
 export const PostManIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -15,7 +14,7 @@ export const PostManIcon = (props: React.SVGProps<SVGSVGElement>) => {
       }}
       {...props}
     >
-      <image xlinkHref={postman.src} width='100%' height='100%' />
+      <image xlinkHref={postManIcon.src} width='100%' height='100%' />
     </svg>
   );
 };

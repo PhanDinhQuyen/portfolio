@@ -1,17 +1,23 @@
 "use client";
+
 import Section from "@/components/section";
-import { HeadingTitle } from "../bio";
+import { HeadingTitle } from "@/components/headingTitle";
 import { Text, Icon } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import img1 from "../../assets/uses/1.png";
-import img2 from "../../assets/uses/2.png";
-import img3 from "../../assets/uses/3.png";
+
+import {
+  firstTerminalImage,
+  secondTerminalImage,
+  firstVsCodeImage,
+} from "@/assets";
+
 import WrapperImage from "@/components/wrapperImage";
 import { Link } from "@chakra-ui/next-js";
+
 export default function Uses() {
   return (
     <Section delay={1}>
-      <HeadingTitle fontSize={undefined}>Uses</HeadingTitle>
+      <HeadingTitle>Uses</HeadingTitle>
 
       <Section delay={0.4}>
         <HeadingTitle fontSize='18'>
@@ -22,13 +28,13 @@ export default function Uses() {
           I am using oh-my-posh to configure my terminal
         </Text>
 
-        <WrapperImage text='My terminal' image={img1} />
+        <WrapperImage text='My terminal' image={firstTerminalImage} />
 
         <Text marginY='2em' textIndent='2em'>
           File configuration settings for the terminal
         </Text>
 
-        <WrapperImage text='File config (.ps1)' image={img2} />
+        <WrapperImage text='File config (.ps1)' image={secondTerminalImage} />
       </Section>
 
       <Section delay={0.8}>
@@ -48,7 +54,7 @@ export default function Uses() {
           </Link>
         </Text>
 
-        <WrapperImage text='My settings VSCode' image={img3} />
+        <WrapperImage text='My settings VSCode' image={firstVsCodeImage} />
       </Section>
     </Section>
   );

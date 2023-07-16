@@ -1,5 +1,4 @@
-import { Inter, Poppins, Pangolin } from "next/font/google";
-export const inter = Inter({ subsets: ["latin", "vietnamese"] });
+import { Poppins, Pangolin } from "next/font/google";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -7,7 +6,7 @@ export const poppins = Poppins({
   display: "swap",
 });
 
-export const pacifico = Pangolin({
+export const pangolin = Pangolin({
   subsets: ["latin", "vietnamese"],
   weight: ["400"],
   display: "swap",

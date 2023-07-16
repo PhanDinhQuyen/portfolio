@@ -1,4 +1,5 @@
 "use client";
+
 import Main from "@/components/main";
 
 import { AnimatePresence } from "framer-motion";

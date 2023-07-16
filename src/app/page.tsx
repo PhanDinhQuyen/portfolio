@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Box,
   Text,
@@ -8,36 +9,23 @@ import {
   Button,
   Icon,
 } from "@chakra-ui/react";
-import avatar from "../assets/avatar.jpg";
-import { pacifico } from "@/libs/fonts";
+
 import Section from "@/components/section";
-import Bio, { HeadingTitle } from "@/app/bio";
-import { Link } from "@chakra-ui/next-js";
-import { BsFacebook, BsInstagram, BsGithub, BsHeartFill } from "react-icons/bs";
-import { BiLogoGmail } from "react-icons/bi";
-import { DownloadIcon } from "@chakra-ui/icons";
+import { HeadingTitle } from "@/components/headingTitle";
+
+import Bio from "@/app/bio";
+
 import OnWeb from "@/components/web";
 
-const urlGenshin = `https://enka.network/u/804579031/?lang=en`;
-const urlCodeWar = `https://www.codewars.com/users/PhanDinhQuyen`;
-const email = `phanquyen7799@gmail.com`;
-export const webs = [
-  {
-    url: "fb.me/louisphan2002",
-    name: "@louisphan",
-    icon: BsFacebook,
-  },
-  {
-    url: "https://www.instagram.com/_louisphan_/",
-    name: "@_louisphan_",
-    icon: BsInstagram,
-  },
-  {
-    url: "https://github.com/PhanDinhQuyen",
-    name: "@PhanDinhQuyen",
-    icon: BsGithub,
-  },
-];
+import { BsHeartFill } from "react-icons/bs";
+import { BiLogoGmail } from "react-icons/bi";
+
+import { Link } from "@chakra-ui/next-js";
+import { DownloadIcon } from "@chakra-ui/icons";
+
+import { pangolin } from "@/libs/fonts";
+import { webs, urls } from "@/constants/home";
+import { avatarImage } from "@/assets";
 
 export default function Home() {
   return (
@@ -65,7 +53,7 @@ export default function Home() {
           <Box flex='1' textAlign={{ base: "center", sm: "left" }}>
             <Heading
               as='h2'
-              fontFamily={pacifico.style.fontFamily}
+              fontFamily={pangolin.style.fontFamily}
               fontSize='4xl'
               fontWeight='bold'
               marginBottom='2'
@@ -74,7 +62,7 @@ export default function Home() {
               Phan Đình Quyền
             </Heading>
             <Text as='p' wordBreak='break-word'>
-              Web Developer{" "}
+              Web Developer&nbsp;
               <Text
                 fontWeight='500'
                 as='span'
@@ -101,30 +89,30 @@ export default function Home() {
             h='32'
             name='louis phan'
             marginBottom='5'
-            src={avatar.src}
+            src={avatarImage.src}
             userSelect='none'
           />
         </Box>
         <Bio />
 
         <Section delay={1}>
-          <HeadingTitle fontSize={undefined}>
+          <HeadingTitle>
             Love <Icon as={BsHeartFill} />
           </HeadingTitle>
           <Text textIndent='1em'>
-            Art,{" "}
-            <Link color='pink.500' href={urlCodeWar}>
+            Art,&nbsp;
+            <Link color='pink.500' href={urls.urlCodeWar}>
               Code,
-            </Link>{" "}
-            Music, Anime, Manhwa, Light Novel,{" "}
-            <Link color='pink.500' href={urlGenshin} target='_blank'>
+            </Link>
+            &nbsp;Music, Anime, Manhwa, Light Novel,&nbsp;
+            <Link color='pink.500' href={urls.urlGenshin} target='_blank'>
               Game
             </Link>
           </Text>
         </Section>
 
         <Section delay={1}>
-          <HeadingTitle fontSize={undefined}>On the web</HeadingTitle>
+          <HeadingTitle>On the web</HeadingTitle>
           <Box display='flex' flexDir='column'>
             {webs.map((web) => {
               const Icon = web.icon;
@@ -140,7 +128,7 @@ export default function Home() {
         </Section>
 
         <Section delay={1}>
-          <HeadingTitle fontSize={undefined}>Contact</HeadingTitle>
+          <HeadingTitle>Contact</HeadingTitle>
 
           <Box
             display='flex'
@@ -152,9 +140,9 @@ export default function Home() {
             <Button
               flex='1'
               gap='2'
-              as={"a"}
+              as={Link}
               target='_blank'
-              href={`mailto:${email}`}
+              href={`mailto:${urls.email}`}
               backgroundColor='teal.500'
               color='whiteAlpha.900'
               minW='max-content'
