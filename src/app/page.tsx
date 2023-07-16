@@ -6,16 +6,19 @@ import {
   Heading,
   useColorModeValue,
   Button,
+  Icon,
 } from "@chakra-ui/react";
 import avatar from "../assets/avatar.jpg";
 import { pacifico } from "@/libs/fonts";
 import Section from "@/components/section";
 import Bio, { HeadingTitle } from "@/app/bio";
 import { Link } from "@chakra-ui/next-js";
-import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsGithub, BsHeartFill } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
+import { DownloadIcon } from "@chakra-ui/icons";
 import OnWeb from "@/components/web";
-const urlGenshin = `https://enka.network/u/804579031/`;
+
+const urlGenshin = `https://enka.network/u/804579031/?lang=en`;
 const urlCodeWar = `https://www.codewars.com/users/PhanDinhQuyen`;
 const email = `phanquyen7799@gmail.com`;
 export const webs = [
@@ -105,17 +108,19 @@ export default function Home() {
         <Bio />
 
         <Section delay={1}>
-          <HeadingTitle fontSize={undefined}>i ♥</HeadingTitle>
+          <HeadingTitle fontSize={undefined}>
+            Love <Icon as={BsHeartFill} />
+          </HeadingTitle>
           <Text textIndent='1em'>
             Art,{" "}
             <Link color='pink.500' href={urlCodeWar}>
               Code,
             </Link>{" "}
-            Music, Anime, Game, Manhwa, Light Novel,{" "}
+            Music, Anime, Manhwa, Light Novel,{" "}
+            <Link color='pink.500' href={urlGenshin} target='_blank'>
+              Game
+            </Link>
           </Text>
-          <Link color='pink.500' href={urlGenshin} target='_blank'>
-            Genshin Impact
-          </Link>
         </Section>
 
         <Section delay={1}>
@@ -137,10 +142,38 @@ export default function Home() {
         <Section delay={1}>
           <HeadingTitle fontSize={undefined}>Contact</HeadingTitle>
 
-          <Box display='flex' justifyContent='center' alignItems='center'>
-            <Button gap='2' as={"a"} target='_blank' href={`mailto:${email}`}>
+          <Box
+            display='flex'
+            gap='2'
+            justifyContent='center'
+            alignItems='center'
+            flexWrap='wrap'
+          >
+            <Button
+              flex='1'
+              gap='2'
+              as={"a"}
+              target='_blank'
+              href={`mailto:${email}`}
+              backgroundColor='teal.500'
+              color='whiteAlpha.900'
+              minW='max-content'
+            >
               Send me to
-              <BiLogoGmail />
+              <Icon color='red.300' as={BiLogoGmail} />
+            </Button>
+            <Button
+              backgroundColor='red.500'
+              color='whiteAlpha.900'
+              flex='1'
+              gap='2'
+              as={Link}
+              target='_blank'
+              href='/cv.pdf'
+              minW='max-content'
+            >
+              My CV
+              <Icon as={DownloadIcon} />
             </Button>
           </Box>
         </Section>

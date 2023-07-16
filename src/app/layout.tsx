@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 
 import Providers from "@/components/providers";
-import Header from "@/components/header";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
 import "./global.css";
 
 import { poppins } from "../libs/fonts";
@@ -34,6 +35,7 @@ export default function RootLayout({
             <LazyVoxelDog />
             {children}
           </Main>
+          <Footer />
         </Providers>
       </body>
     </html>

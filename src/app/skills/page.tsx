@@ -1,17 +1,17 @@
 "use client";
+import { ChevronRightIcon, Icon } from "@chakra-ui/icons";
 import { HeadingTitle } from "@/app/bio";
+import { skills } from "@/constants/skills";
+
 import GirdItems from "@/components/girdItems";
 import Section from "@/components/section";
-import { skills } from "@/constants/skills";
-// import Loading from "@/components/loading";
-import { ChevronRightIcon, Icon } from "@chakra-ui/icons";
-export default function Skills() {
-  // return <Loading />;
 
+import Description from "./description";
+export default function Skills() {
   return (
     <Section delay={1}>
+      <Description />
       <HeadingTitle fontSize={undefined}>Skills</HeadingTitle>
-
       <Section delay={0.2}>
         <HeadingTitle fontSize='18'>
           <Icon as={ChevronRightIcon} />

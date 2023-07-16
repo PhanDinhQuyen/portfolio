@@ -31,6 +31,10 @@ export const HeadingTitle = ({
       textDecorationColor='#525252'
       fontSize={fontSize || "x-large"}
       variant='section-title'
+      display='flex'
+      gap='2'
+      justifyContent='flex-start'
+      alignItems='center'
       className={pacifico.className}
     >
       {children}
@@ -53,7 +57,7 @@ export default function Bio() {
         >
           Dak Lak
         </Link>
-        , Viet Nam.
+        , Viet Nam
       </BioSection>
       <BioSection>
         <BioYear>2020</BioYear>
@@ -69,8 +73,8 @@ export default function Bio() {
       </BioSection>
       <BioSection>
         <BioYear>Now</BioYear>
-        Currently a third-year college student and studying at the Cryptography
-        Technical Academy in&nbsp;
+        Currently a {new Date().getFullYear() - 2019}-year college student and
+        studying at the Cryptography Technical Academy in&nbsp;
         <Link
           minW='max-content'
           color='purple.400'

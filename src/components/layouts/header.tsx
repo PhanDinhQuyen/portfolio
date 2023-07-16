@@ -12,11 +12,11 @@ import {
 import { Link } from "@chakra-ui/next-js";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
-import ThemeToggleButton from "./themeSwitch";
-import NavBar from "./navBar";
-import { linkSource as url } from "./navBar";
-import Logo from "./logo";
-import ProcessBar from "./processBar";
+import ThemeToggleButton from "../themeSwitch";
+import NavBar from "../navBar";
+import { linkSource as url } from "../navBar";
+import Logo from "../logo";
+import ProcessBar from "../processBar";
 export default function Header() {
   return (
     <Box

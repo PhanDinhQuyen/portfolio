@@ -1,3 +1,3 @@
 export default function Uses() {
-  return <div>Usesasdasd</div>;
+  return <div>Uses</div>;
 }

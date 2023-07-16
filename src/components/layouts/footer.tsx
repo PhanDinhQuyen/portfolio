@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <Box
       position='relative'
-      as='div'
+      as='footer'
       textAlign='center'
       opacity={0.4}
       fontSize='sm'
-      paddingTop='8'
+      paddingBottom='8'
       minW='max-content'
     >
       &copy; {new Date().getFullYear()} Louis Phan. All Rights Reserved.

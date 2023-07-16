@@ -1,11 +1,11 @@
-import { IconButton } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
 import { useState, useEffect, useCallback, useRef } from "react";
-
+import { TriangleUpIcon } from "@chakra-ui/icons";
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = useCallback(() => {
-    if (window.scrollY > 50) {
+    if (global.scrollY > 200) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -13,7 +13,7 @@ export default function BackToTop() {
   }, []);
 
   const handleClickMoveTop = useCallback(() => {
-    window.scrollTo({
+    global.scrollTo({
       top: 0,
       behavior: "smooth",
     });
@@ -30,22 +30,30 @@ export default function BackToTop() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    global.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      global.removeEventListener("scroll", handleScroll);
     };
   }, [toggleVisible]);
 
   return (
-    <IconButton
+    <Box
       position='fixed'
-      bottom={visible ? "4" : "-10"}
-      right={visible ? "4" : "-10"}
+      zIndex='2'
+      bottom={visible ? "8" : "-10"}
+      right={visible ? "8" : "-10"}
       opacity={visible ? 1 : 0}
-      aria-label='icon'
-      onClick={handleClickMoveTop}
-      transition='all 300ms ease-in-out'
-    ></IconButton>
+      transition='all 200ms ease-in-out'
+      style={{
+        rotate: visible ? "0deg" : "180deg",
+      }}
+    >
+      <IconButton
+        aria-label='icon'
+        onClick={handleClickMoveTop}
+        as={TriangleUpIcon}
+      />
+    </Box>
   );
 }

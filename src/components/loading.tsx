@@ -5,8 +5,9 @@ import styled from "@emotion/styled";
 const LoadingBox = styled.div`
   position: relative;
   display: flex;
-  height: 50vh;
+  height: 80vh;
   justify-content: center;
+  top: -20vh;
   flex-direction: column;
   align-items: center;
   .lds-ripple {

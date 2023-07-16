@@ -1,7 +1,7 @@
 import { useColorModeValue } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 const BoxProcessBar = styled.div`

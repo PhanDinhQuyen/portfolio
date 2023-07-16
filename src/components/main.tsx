@@ -12,7 +12,7 @@ export default function Main({
   return (
     <Container
       as={as || "div"}
-      paddingY={p ? "14" : 0}
+      paddingY={p ? "12" : 0}
       position='relative'
       maxW='container.md'
       // minH='container.md'
