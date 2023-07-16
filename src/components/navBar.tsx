@@ -1,11 +1,9 @@
-"use client";
 import React, { Fragment, HTMLAttributeAnchorTarget } from "react";
-import { List } from "@chakra-ui/react";
+import { ChakraProps, Icon, List } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
-
-export const linkSource = `https://github.com/PhanDinhQuyen/portfolio`;
-
+import { linkSource } from "@/constants/header";
+import { BiLogoGithub } from "react-icons/bi";
 import { usePathname } from "next/navigation";
 
 interface LinkItem {
@@ -13,11 +11,13 @@ interface LinkItem {
   path: string | null;
   target: HTMLAttributeAnchorTarget;
   children: React.ReactNode;
+  props?: ChakraProps;
 }
 
-const LinkItem = ({ href, path, target, children, ...props }: LinkItem) => {
+const LinkItem = ({ href, path, target, children, props }: LinkItem) => {
   const active = path === href;
   const inActiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
+
   return (
     <Link
       bg={active ? "grassTeal" : undefined}
@@ -51,7 +51,19 @@ function NavBar() {
             {link}
           </LinkItem>
         ))}
-        <LinkItem path={null} href={linkSource} target='_blank'>
+        <LinkItem
+          props={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "1",
+            textTransform: "capitalize",
+          }}
+          path={null}
+          href={linkSource}
+          target='_blank'
+        >
+          <Icon as={BiLogoGithub} />
           source
         </LinkItem>
       </List>

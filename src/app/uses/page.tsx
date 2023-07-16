@@ -18,7 +18,7 @@ import { Link } from "@chakra-ui/next-js";
 
 export default function Uses() {
   return (
-    <Section delay={1}>
+    <Section delay={0.2}>
       <HeadingTitle>Uses</HeadingTitle>
 
       <Section delay={0.4}>
@@ -43,7 +43,7 @@ export default function Uses() {
         <WrapperImage text='File config (.ps1)' image={secondTerminalImage} />
       </Section>
 
-      <Section delay={0.8}>
+      <Section delay={0.6}>
         <HeadingTitle fontSize='18'>
           <Icon as={ChevronRightIcon} />
           My VSCode setup

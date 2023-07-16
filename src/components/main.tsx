@@ -15,7 +15,6 @@ export default function Main({
       paddingY={p ? "12" : 0}
       position='relative'
       maxW='container.md'
-      // minH='container.md'
     >
       {children}
     </Container>

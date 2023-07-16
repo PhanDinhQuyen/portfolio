@@ -1,5 +1,4 @@
 import { Heading } from "@chakra-ui/react";
-import { pangolin } from "@/libs/fonts";
 
 export const HeadingTitle = ({
   children,
@@ -22,7 +21,7 @@ export const HeadingTitle = ({
       gap='2'
       justifyContent='flex-start'
       alignItems='center'
-      className={pangolin.className}
+      // className={pangolin.className}
     >
       {children}
     </Heading>

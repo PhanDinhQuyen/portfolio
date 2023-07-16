@@ -13,13 +13,12 @@ const Section = ({
   delay = 0,
 }: {
   children: ReactNode;
-  delay: number;
+  delay?: number;
 }) => (
   <StyledSection
     initial={{ y: 10, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
-    transition='0.8'
-    transitionDelay={`${delay}`}
+    transition={{ duration: `0.8`, delay: String(delay) }}
     mb={6}
   >
     {children}

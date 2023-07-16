@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Box,
   useColorModeValue,
@@ -8,15 +9,17 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 import { Link } from "@chakra-ui/next-js";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
-import ThemeToggleButton from "../themeSwitch";
-import NavBar from "../navBar";
-import { linkSource as url } from "../navBar";
 import Logo from "../logo";
+import NavBar from "../navBar";
 import ProcessBar from "../processBar";
+import ThemeToggleButton from "../themeSwitch";
+
+import { linkSource } from "@/constants/header";
+
 export default function Header() {
   return (
     <Box
@@ -68,7 +71,7 @@ export default function Header() {
                 <MenuItem as={Link} href='/projects'>
                   Projects
                 </MenuItem>
-                <MenuItem as={Link} href={url} target='_blank'>
+                <MenuItem as={Link} href={linkSource} target='_blank'>
                   Source
                 </MenuItem>
               </MenuList>

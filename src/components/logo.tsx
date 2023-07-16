@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { Text, useColorModeValue } from "@chakra-ui/react";
+import { Heading, useColorModeValue } from "@chakra-ui/react";
 import FootprintIcon from "./icons/footPrint";
 import styled from "@emotion/styled";
-import { pangolin } from "@/libs/fonts";
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -29,16 +26,15 @@ const Logo = () => {
     <Link href='/' scroll={false}>
       <LogoBox>
         <FootprintIcon />
-        <Text
+        <Heading
           color={useColorModeValue("gray.800", "whiteAlpha.900")}
-          fontFamily={pangolin.style.fontFamily}
           fontWeight='bold'
           fontSize='2xl'
           ml={3}
           minW='max-content'
         >
           Louis Phan
-        </Text>
+        </Heading>
       </LogoBox>
     </Link>
   );

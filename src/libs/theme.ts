@@ -1,6 +1,7 @@
 import { extendTheme, StyleFunctionProps } from "@chakra-ui/react";
 
 import { mode } from "@chakra-ui/theme-tools";
+import { pangolin } from "./fonts";
 
 const styles = {
   global: (props: StyleFunctionProps) => ({
@@ -18,5 +19,9 @@ const config = {
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ config, colors, styles });
+const fonts = {
+  heading: pangolin.style.fontFamily,
+};
+
+const theme = extendTheme({ config, colors, styles, fonts });
 export default theme;

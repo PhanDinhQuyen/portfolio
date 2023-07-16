@@ -12,7 +12,7 @@ import Description from "./description";
 
 export default function Skills() {
   return (
-    <Section delay={1}>
+    <Section delay={0.2}>
       {/* delay 0.2s */}
       <Description />
 

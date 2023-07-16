@@ -23,14 +23,13 @@ import { BiLogoGmail } from "react-icons/bi";
 import { Link } from "@chakra-ui/next-js";
 import { DownloadIcon } from "@chakra-ui/icons";
 
-import { pangolin } from "@/libs/fonts";
 import { webs, urls } from "@/constants/home";
 import { avatarImage } from "@/assets";
 
 export default function Home() {
   return (
     <Box p='2' w='full' margin='auto' maxW='lg' as='article'>
-      <Section delay={1}>
+      <Section delay={0.2}>
         <Text
           fontSize='16'
           bg={useColorModeValue(`blackAlpha.200`, `whiteAlpha.200`)}
@@ -53,7 +52,6 @@ export default function Home() {
           <Box flex='1' textAlign={{ base: "center", sm: "left" }}>
             <Heading
               as='h2'
-              fontFamily={pangolin.style.fontFamily}
               fontSize='4xl'
               fontWeight='bold'
               marginBottom='2'
@@ -95,7 +93,7 @@ export default function Home() {
         </Box>
         <Bio />
 
-        <Section delay={1}>
+        <Section delay={0.4}>
           <HeadingTitle>
             Love <Icon as={BsHeartFill} />
           </HeadingTitle>
@@ -111,7 +109,7 @@ export default function Home() {
           </Text>
         </Section>
 
-        <Section delay={1}>
+        <Section delay={0.6}>
           <HeadingTitle>On the web</HeadingTitle>
           <Box display='flex' flexDir='column'>
             {webs.map((web) => {
@@ -127,7 +125,7 @@ export default function Home() {
           </Box>
         </Section>
 
-        <Section delay={1}>
+        <Section delay={0.8}>
           <HeadingTitle>Contact</HeadingTitle>
 
           <Box

@@ -1,5 +1,3 @@
-"use client";
-
 import theme from "@/libs/theme";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";

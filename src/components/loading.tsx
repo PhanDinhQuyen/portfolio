@@ -1,4 +1,3 @@
-"use client";
 import { useColorModeValue } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
