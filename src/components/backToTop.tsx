@@ -53,6 +53,7 @@ export default function BackToTop() {
         aria-label='icon'
         onClick={handleClickMoveTop}
         as={TriangleUpIcon}
+        background='transparent'
       />
     </Box>
   );

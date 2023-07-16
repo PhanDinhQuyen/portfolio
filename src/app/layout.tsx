@@ -1,23 +1,29 @@
 "use client";
-import type { Metadata } from "next";
+import "./global.css";
+import { poppins } from "@/libs/fonts";
 
-import Providers from "@/components/providers";
+import BackToTop from "@/components/backToTop";
+import Loader from "@/components/dogLoader";
+
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
-import "./global.css";
+import Main from "@/components/main";
 
-import { poppins } from "../libs/fonts";
-
-import Loader from "@/components/dogLoader";
 import dynamic from "next/dynamic";
+// import Loading from "@/components/loading";
 
-const LazyVoxelDog = dynamic(() => import("../components/dog"), {
+const LazyVoxelDog = dynamic(() => import("@/components/dog"), {
   ssr: false,
   loading: () => <Loader />,
 });
-import Main from "@/components/main";
-export const metadata: Metadata = {
-  title: "LouisPhan HomePage",
+
+const DynamicChakra = dynamic(() => import("@/components/providers"), {
+  ssr: false,
+  // loading: () => <Loading />,
+});
+
+const metadata = {
+  title: "LouisPhan: HomePage",
   description: `LouisPhan's website`,
 };
 
@@ -28,15 +34,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <title>{metadata.title}</title>
+      <meta name='description' content={metadata.description} />
       <body className={poppins.className}>
-        <Providers>
+        <DynamicChakra>
           <Header />
           <Main as='main' p={true}>
             <LazyVoxelDog />
             {children}
+            <BackToTop />
           </Main>
           <Footer />
-        </Providers>
+        </DynamicChakra>
       </body>
     </html>
   );

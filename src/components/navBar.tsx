@@ -36,7 +36,7 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItem) => {
 
 function NavBar() {
   const pathName = usePathname();
-  const Links = [`skills`, `uses`, `games`];
+  const Links = [`skills`, `uses`, `projects`];
 
   return (
     <Fragment>

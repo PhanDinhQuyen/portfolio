@@ -23,7 +23,7 @@ export default function WrapperImage({
   text: string;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(`calc(50%-${image.height})`);
+
   return (
     <Box p='4' as='figure'>
       <Image

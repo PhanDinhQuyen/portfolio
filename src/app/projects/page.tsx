@@ -1,3 +1,3 @@
 export default function Page() {
-  return <p>Games</p>;
+  return <p>Projects</p>;
 }

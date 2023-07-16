@@ -1,6 +1,6 @@
 "use client";
-import BackToTop from "@/components/backToTop";
 import Main from "@/components/main";
+
 import { AnimatePresence } from "framer-motion";
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -9,7 +9,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
       <AnimatePresence mode='wait' initial={true}>
         {children}
       </AnimatePresence>
-      <BackToTop />
     </Main>
   );
 }

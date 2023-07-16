@@ -65,8 +65,8 @@ export default function Header() {
                 <MenuItem as={Link} href='/uses'>
                   Uses
                 </MenuItem>
-                <MenuItem as={Link} href='/games'>
-                  Games
+                <MenuItem as={Link} href='/projects'>
+                  Projects
                 </MenuItem>
                 <MenuItem as={Link} href={url} target='_blank'>
                   Source
