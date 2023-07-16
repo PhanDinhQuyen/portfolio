@@ -18,13 +18,13 @@ export default function Uses() {
           <Icon as={ChevronRightIcon} />
           My terminal setup
         </HeadingTitle>
-        <Text marginTop='2em' textIndent='2em'>
+        <Text marginY='2em' textIndent='2em'>
           I am using oh-my-posh to configure my terminal
         </Text>
 
         <WrapperImage text='My terminal' image={img1} />
 
-        <Text marginTop='2em' textIndent='2em'>
+        <Text marginY='2em' textIndent='2em'>
           File configuration settings for the terminal
         </Text>
 
@@ -36,7 +36,7 @@ export default function Uses() {
           <Icon as={ChevronRightIcon} />
           My VSCode setup
         </HeadingTitle>
-        <Text marginTop='2em' textIndent='2em'>
+        <Text marginY='2em' textIndent='2em'>
           File setting &nbsp;
           <Link
             color='pink.500'

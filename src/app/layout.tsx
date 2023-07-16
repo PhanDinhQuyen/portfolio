@@ -10,7 +10,6 @@ import Footer from "@/components/layouts/footer";
 import Main from "@/components/main";
 
 import dynamic from "next/dynamic";
-// import Loading from "@/components/loading";
 
 const LazyVoxelDog = dynamic(() => import("@/components/dog"), {
   ssr: false,
@@ -19,11 +18,10 @@ const LazyVoxelDog = dynamic(() => import("@/components/dog"), {
 
 const DynamicChakra = dynamic(() => import("@/components/providers"), {
   ssr: false,
-  // loading: () => <Loading />,
 });
 
 const metadata = {
-  title: "LouisPhan: HomePage",
+  title: "LouisPhan: Home Page",
   description: `LouisPhan's website`,
 };
 

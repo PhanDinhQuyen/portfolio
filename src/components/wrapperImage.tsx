@@ -25,7 +25,7 @@ export default function WrapperImage({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box p='4' as='figure'>
+    <Box as='figure'>
       <Image
         onClick={onOpen}
         userSelect='none'
