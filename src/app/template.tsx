@@ -3,7 +3,7 @@ import Main from "@/components/main";
 
 import { AnimatePresence } from "framer-motion";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "@/components/loading";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
