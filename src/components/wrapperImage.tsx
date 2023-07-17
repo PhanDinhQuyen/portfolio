@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Image,
@@ -8,7 +9,10 @@ import {
   ModalOverlay,
   Text,
   useDisclosure,
+  Skeleton,
 } from "@chakra-ui/react";
+
+import { useState } from "react";
 
 interface ImageType {
   src: string;
@@ -23,18 +27,33 @@ export default function WrapperImage({
   text: string;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLoad, setLoad] = useState(true);
 
   return (
     <Box as='figure'>
+      {isLoad && (
+        <Skeleton
+          height={{
+            base: "200px",
+            md: "400px",
+          }}
+          width='full'
+        />
+      )}
       <Image
         onClick={onOpen}
         userSelect='none'
         loading='lazy'
+        onLoad={() => {
+          setLoad(false);
+        }}
+        fill='whiteAlpha.400'
         alt=''
         src={image.src}
         cursor='pointer'
         borderRadius='4'
       />
+
       <Text
         fontSize='sm'
         fontStyle='italic'
