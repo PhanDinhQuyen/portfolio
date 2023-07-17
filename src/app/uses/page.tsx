@@ -19,7 +19,7 @@ import { Link } from "@chakra-ui/next-js";
 export default function Uses() {
   return (
     <Section delay={0.2}>
-      <HeadingTitle>Uses</HeadingTitle>
+      <HeadingTitle as='h2'>Uses</HeadingTitle>
 
       <Section delay={0.4}>
         <HeadingTitle fontSize='18'>

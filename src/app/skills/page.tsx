@@ -16,7 +16,7 @@ export default function Skills() {
       {/* delay 0.2s */}
       <Description />
 
-      <HeadingTitle>Skills</HeadingTitle>
+      <HeadingTitle as='h2'>Skills</HeadingTitle>
       <Section delay={0.4}>
         <HeadingTitle fontSize='18'>
           <Icon as={ChevronRightIcon} />

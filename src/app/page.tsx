@@ -89,6 +89,8 @@ export default function Home() {
             marginBottom='5'
             src={avatarImage.src}
             userSelect='none'
+            as='div'
+            position='relative'
           />
         </Box>
         <Bio />
@@ -99,7 +101,7 @@ export default function Home() {
           </HeadingTitle>
           <Text textIndent='1em'>
             Art,&nbsp;
-            <Link color='pink.500' href={urls.urlCodeWar}>
+            <Link color='pink.500' href={urls.urlCodeWar} target='_blank'>
               Code,
             </Link>
             &nbsp;Music, Anime, Manhwa, Light Novel,&nbsp;

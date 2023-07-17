@@ -18,16 +18,16 @@ const DynamicChakra = dynamic(() => import("@/components/providers"), {
   ssr: false,
 });
 
-export default function LayoutSSR({ children }: { children: React.ReactNode }) {
+export default function LayoutCSR({ children }: { children: React.ReactNode }) {
   return (
     <DynamicChakra>
       <Header />
       <Main as='main' p={true}>
         <LazyVoxelDog />
         {children}
-        <BackToTop />
       </Main>
       <Footer />
+      <BackToTop />
     </DynamicChakra>
   );
 }

@@ -3,13 +3,14 @@ import "./global.css";
 import { poppins } from "@/libs/fonts";
 import { Metadata } from "next";
 
-import LayoutSSR from "@/components/layouts";
+import LayoutCSR from "@/components/layouts";
 
 export const metadata: Metadata = {
   title: "LouisPhan: Home Page",
   description: `LouisPhan's website`,
   keywords: "LouisPhan, website, portfolio",
   viewport: "width=device-width, initial-scale=1",
+  authors: [{ name: "LouisPhan", url: "https://github.com/PhanDinhQuyen" }],
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={poppins.className}>
-        <LayoutSSR>{children}</LayoutSSR>
+        <LayoutCSR>{children}</LayoutCSR>
       </body>
     </html>
   );

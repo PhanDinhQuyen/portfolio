@@ -13,7 +13,7 @@ export default function Description() {
           styles={{ color: "cyan.500", fontWeight: "bold" }}
           query={["javascript", "typescript"]}
         >
-          &nbsp;&nbsp;&nbsp;&nbsp;I understand JavaScript , TypeScript, and
+          &nbsp;&nbsp;&nbsp;&nbsp;I know JavaScript , TypeScript, and
           object-oriented programming. I can implement design patterns like
           Facade, Observer, and Strategy
         </Highlight>

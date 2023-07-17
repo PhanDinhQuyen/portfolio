@@ -7,12 +7,12 @@ export default function Main({
 }: {
   children: React.ReactNode;
   p: boolean;
-  as: React.ElementType | undefined;
+  as?: React.ElementType;
 }) {
   return (
     <Container
       as={as || "div"}
-      paddingY={p ? "12" : 0}
+      paddingY={p ? "12" : "0"}
       position='relative'
       maxW='container.md'
     >
