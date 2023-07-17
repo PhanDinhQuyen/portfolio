@@ -66,7 +66,7 @@ export default function ProjectItem({
       <Box
         flexWrap='wrap'
         display='inline-flex'
-        gap={{ base: 0, sm: 2 }}
+        gap='2'
         alignItems='center'
         py='5'
       >
