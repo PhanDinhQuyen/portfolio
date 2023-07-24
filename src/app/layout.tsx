@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords: "LouisPhan, website, portfolio",
   viewport: "width=device-width, initial-scale=1",
   authors: [{ name: "LouisPhan", url: "https://github.com/PhanDinhQuyen" }],
+  openGraph: {
+    images: "./avatar.jpg",
+    description: "LouisPhan's website",
+  },
 };
 
 export default function RootLayout({
