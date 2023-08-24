@@ -157,7 +157,7 @@ export default function Home() {
               gap='2'
               as={Link}
               target='_blank'
-              href='/cv.pdf'
+              href='/'
               minW='max-content'
             >
               My CV
