@@ -27,8 +27,8 @@ export default function Skills() {
 
       <Section delay={0.6}>
         <HeadingTitle fontSize='18'>
-          <Icon id='#fontend' as={ChevronRightIcon} />
-          FontEnd
+          <Icon id='#frontend' as={ChevronRightIcon} />
+          FrontEnd
         </HeadingTitle>
         <GirdItems list={skills.client} />
       </Section>

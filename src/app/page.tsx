@@ -69,7 +69,7 @@ export default function Home() {
               >
                 (
                 <Link color='pink.500' href='/skills'>
-                  FontEnd
+                  FrontEnd
                 </Link>
                 /
                 <Link color='pink.500' href='/skills'>
