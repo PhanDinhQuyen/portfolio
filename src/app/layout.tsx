@@ -2,7 +2,7 @@ import "./global.css";
 
 import { poppins } from "@/libs/fonts";
 import { Metadata, Viewport } from "next";
-import { ColorModeScript } from "@chakra-ui/react";
+import { ColorModeScript, Box } from "@chakra-ui/react";
 import { themeConfig } from "@/libs/theme-config";
 
 import LayoutCSR from "@/components/layouts";
@@ -68,7 +68,9 @@ export default function RootLayout({
         <ColorModeScript initialColorMode={themeConfig.initialColorMode} />
       </head>
       <body className={poppins.className}>
-        <LayoutCSR>{children}</LayoutCSR>
+        <Box pt='60px'>
+          <LayoutCSR>{children}</LayoutCSR>
+        </Box>
       </body>
     </html>
   );
