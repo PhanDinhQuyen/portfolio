@@ -18,10 +18,10 @@ export const DogContainer = forwardRef(
       ref={ref as RefObject<HTMLDivElement>}
       className='voxel-dog'
       m='auto'
-      mt={["-20px", "-60px", "-120px"]}
-      mb={["-40px", "-140px", "-200px"]}
-      w={[280, 480, 640]}
-      h={[280, 480, 640]}
+      mt={["-20px", "-40px", "-60px"]}
+      mb={["-40px", "-80px", "-120px"]}
+      w={[200, 280, 360]}
+      h={[200, 280, 360]}
       position='relative'
     >
       {children}

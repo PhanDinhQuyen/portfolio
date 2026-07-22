@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // This is the property you need to add
+  output: "export",
+  distDir: "dist",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   compiler: {
-    // ssr and displayName are configured by default
     styledComponents: false,
   },
 };

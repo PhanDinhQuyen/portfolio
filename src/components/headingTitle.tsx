@@ -13,18 +13,14 @@ export const HeadingTitle = ({
   return (
     <Heading
       as={as || "h3"}
-      marginBottom='5'
-      textDecoration='underline'
-      textUnderlineOffset='8px'
-      textDecorationThickness='4px'
-      textDecorationColor='#525252'
+      marginBottom='4'
       fontSize={fontSize || "x-large"}
+      color='brand.500'
       variant='section-title'
       display='inline-flex'
       gap='2'
       justifyContent='flex-start'
       alignItems='center'
-      // className={pangolin.className}
     >
       {children}
     </Heading>

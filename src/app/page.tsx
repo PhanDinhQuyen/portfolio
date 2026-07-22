@@ -8,13 +8,14 @@ import {
   useColorModeValue,
   Button,
   Icon,
+  Badge,
+  Stack,
 } from "@chakra-ui/react";
 
 import Section from "@/components/section";
 import { HeadingTitle } from "@/components/headingTitle";
 
 import Bio from "@/app/bio";
-
 import OnWeb from "@/components/web";
 
 import { BsHeartFill } from "react-icons/bs";
@@ -27,87 +28,82 @@ import { webs, urls } from "@/constants/home";
 import { avatarImage } from "@/assets";
 
 export default function Home() {
-  return (
-    <Box p='2' w='full' margin='auto' maxW='lg' as='article'>
-      <Section delay={0.2}>
-        <Text
-          fontSize='16'
-          bg={useColorModeValue(`blackAlpha.200`, `whiteAlpha.200`)}
-          textAlign='center'
-          borderRadius='5'
-          py='3'
-          px='2'
-          marginBottom='5'
-        >
-          Hello, I am a Web Developer based in Viet Nam!
-        </Text>
+  const badgeBg = useColorModeValue("blackAlpha.100", "whiteAlpha.100");
 
-        <Box
-          display='flex'
-          flexWrap='wrap-reverse'
-          justifyContent='center'
-          alignItems='center'
-          marginBottom='4'
+  return (
+    <Box p='2' w='full' margin='auto' maxW='container.lg' as='article'>
+      <Section delay={0.2}>
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          spacing='8'
+          align='center'
+          justify='space-between'
+          marginBottom='10'
         >
-          <Box flex='1' textAlign={{ base: "center", sm: "left" }}>
-            <Heading
-              as='h2'
-              fontSize='4xl'
-              fontWeight='bold'
-              marginBottom='2'
-              minW='max-content'
+          <Box flex='1' textAlign={{ base: "center", md: "left" }}>
+            <Badge
+              fontSize='sm'
+              px='3'
+              py='1'
+              borderRadius='full'
+              bg={badgeBg}
+              marginBottom='4'
             >
-              Phan Đình Quyền
+              Developer & Linux SysAdmin based in Viet Nam
+            </Badge>
+            <Heading
+              as='h1'
+              fontSize={{ base: "4xl", md: "6xl" }}
+              fontWeight='bold'
+              lineHeight='1.1'
+              marginBottom='4'
+            >
+              Phan Dinh Quyen
             </Heading>
-            <Text as='p' wordBreak='break-word'>
-              Web Developer&nbsp;
-              <Text
-                fontWeight='500'
-                as='span'
-                minWidth='max-content'
-                wordBreak='break-word'
-              >
-                (
-                <Link color='pink.500' href='/skills'>
-                  FrontEnd
-                </Link>
-                /
-                <Link color='pink.500' href='/skills'>
-                  BackEnd
-                </Link>
-                )
-              </Text>
+            <Text fontSize='lg' color='brand.500' fontWeight='medium' marginBottom='6'>
+              Linux System Engineer
             </Text>
+            <Stack direction={{ base: "column", sm: "row" }} spacing='3' justify={{ base: "center", md: "flex-start" }}>
+              <Button
+                as={Link}
+                href='/projects'
+                colorScheme='brand'
+                rightIcon={<Icon as={BsHeartFill} />}
+              >
+                View Projects
+              </Button>
+              <Button
+                as={Link}
+                href='/LouisPhan-CV.pdf'
+                target='_blank'
+                variant='outline'
+                rightIcon={<Icon as={DownloadIcon} />}
+              >
+                Download CV
+              </Button>
+            </Stack>
           </Box>
 
           <Avatar
-            border='2px'
+            border='3px solid'
+            borderColor='brand.500'
             loading='lazy'
-            w='32'
-            h='32'
+            w={{ base: "32", md: "40" }}
+            h={{ base: "32", md: "40" }}
             name='louis phan'
-            marginBottom='5'
             src={avatarImage.src}
             userSelect='none'
-            as='div'
-            position='relative'
           />
-        </Box>
+        </Stack>
+
         <Bio />
 
         <Section delay={0.4}>
           <HeadingTitle>
             Love <Icon as={BsHeartFill} />
           </HeadingTitle>
-          <Text textIndent='1em'>
-            Art,&nbsp;
-            <Link color='pink.500' href={urls.urlCodeWar} target='_blank'>
-              Code,
-            </Link>
-            &nbsp;Music, Anime, Manhwa, Light Novel,&nbsp;
-            <Link color='pink.500' href={urls.urlGenshin} target='_blank'>
-              Game
-            </Link>
+          <Text>
+            Art, Code, Music, Anime, Manhwa, Light Novel, Game
           </Text>
         </Section>
 
@@ -116,7 +112,6 @@ export default function Home() {
           <Box display='flex' flexDir='column'>
             {webs.map((web) => {
               const Icon = web.icon;
-
               return (
                 <OnWeb key={web.name} href={web.url}>
                   <Icon />
@@ -129,11 +124,10 @@ export default function Home() {
 
         <Section delay={0.8}>
           <HeadingTitle>Contact</HeadingTitle>
-
           <Box
             display='flex'
             gap='2'
-            justifyContent='center'
+            justifyContent={{ base: "center", md: "flex-start" }}
             alignItems='center'
             flexWrap='wrap'
           >
@@ -143,25 +137,11 @@ export default function Home() {
               as={Link}
               target='_blank'
               href={`mailto:${urls.email}`}
-              backgroundColor='teal.500'
-              color='whiteAlpha.900'
+              colorScheme='brand'
               minW='max-content'
             >
-              Send me to
+              Email me
               <Icon color='red.300' as={BiLogoGmail} />
-            </Button>
-            <Button
-              backgroundColor='red.500'
-              color='whiteAlpha.900'
-              flex='1'
-              gap='2'
-              as={Link}
-              target='_blank'
-              href='/'
-              minW='max-content'
-            >
-              My CV
-              <Icon as={DownloadIcon} />
             </Button>
           </Box>
         </Section>

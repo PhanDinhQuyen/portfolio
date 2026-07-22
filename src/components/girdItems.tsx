@@ -3,7 +3,8 @@ import {
   GridItem,
   Icon,
   Text,
-  useColorModeValue,
+  Box,
+  Tooltip,
 } from "@chakra-ui/react";
 
 interface ListItem {
@@ -19,25 +20,39 @@ interface Props {
 export default function GirdItems({ list }: Props) {
   return (
     <Grid
-      marginY='8'
-      placeItems='center'
+      marginY='6'
+      templateColumns={{
+        base: "repeat(3, 1fr)",
+        sm: "repeat(4, 1fr)",
+        md: "repeat(6, 1fr)",
+      }}
       gap='4'
-      templateColumns='repeat(3, 1fr)'
+      justifyItems='center'
     >
       {list.map((item) => (
         <GridItem textAlign='center' key={item.name}>
-          <Icon
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            backgroundColor={useColorModeValue(`blackAlpha.200`, `transparent`)}
-            borderRadius='8'
-            fontSize={{ base: "5xl", sm: "6xl" }}
-            as={item.icon}
-            color={item.color}
-            xlinkTitle={item.name}
-          />
-          <Text fontSize='14' fontWeight='500'>
-            {item.name}
-          </Text>
+          <Tooltip label={item.name} hasArrow placement='top'>
+            <Box
+              p='3'
+              borderRadius='xl'
+              transition='all 0.2s'
+              _hover={{
+                transform: "translateY(-4px)",
+                bg: "whiteAlpha.100",
+                boxShadow: "md",
+              }}
+            >
+              <Icon
+                fontSize='4xl'
+                as={item.icon}
+                color={item.color}
+                marginBottom='2'
+              />
+              <Text fontSize='xs' fontWeight='500' noOfLines={1}>
+                {item.name}
+              </Text>
+            </Box>
+          </Tooltip>
         </GridItem>
       ))}
     </Grid>

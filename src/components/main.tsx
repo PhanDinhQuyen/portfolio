@@ -11,10 +11,11 @@ export default function Main({
 }) {
   return (
     <Container
-      as={as || "div"}
-      paddingY={p ? "12" : "0"}
-      position='relative'
-      maxW='container.md'
+    as={as || "div"}
+    paddingY={p ? "12" : "0"}
+    position='relative'
+    maxW='container.lg'
+    px={{ base: 4, md: 8 }}
     >
       {children}
     </Container>

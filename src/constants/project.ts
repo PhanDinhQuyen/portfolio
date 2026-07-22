@@ -1,10 +1,8 @@
-import { Url } from "url";
-
 export interface ProjectProps {
-  title: String;
+  title: string;
   url: string;
   technique: Technique;
-  description: Array<String>;
+  description: string[];
 }
 
 export interface Technique {
@@ -13,7 +11,7 @@ export interface Technique {
 }
 
 export interface Props {
-  name: String;
+  name: string;
   color: string;
 }
 

@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
@@ -6,11 +6,12 @@ const Footer = () => {
       position='relative'
       as='footer'
       textAlign='center'
-      opacity={0.4}
       fontSize='sm'
       paddingBottom='8'
+      paddingTop='4'
       minW='max-content'
     >
+      <Divider marginBottom='4' opacity={0.2} />
       &copy; {new Date().getFullYear()} Louis Phan. All Rights Reserved.
     </Box>
   );

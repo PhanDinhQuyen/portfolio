@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Main from "../main";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 
 const LazyVoxelDog = dynamic(() => import("@/components/dog"), {
   ssr: false,
@@ -19,11 +20,14 @@ const DynamicChakra = dynamic(() => import("@/components/providers"), {
 });
 
 export default function LayoutCSR({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <DynamicChakra>
       <Header />
       <Main as='main' p={true}>
-        <LazyVoxelDog />
+        {isHome && <LazyVoxelDog />}
         {children}
       </Main>
       <Footer />

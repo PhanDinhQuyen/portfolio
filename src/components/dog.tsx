@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { loadGLTFModel } from "@/libs/model";
 import { DogSpinner, DogContainer } from "./dogLoader";
 function easeOutCirc(x: number) {
@@ -11,7 +11,7 @@ const VoxelDog = (): JSX.Element => {
   const refContainer = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef<THREE.WebGLRenderer | null>(null);
-  const urlDogGLB = `./dog.glb`;
+  const urlDogGLB = `/dog.glb`;
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;

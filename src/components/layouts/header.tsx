@@ -21,24 +21,28 @@ import ThemeToggleButton from "../themeSwitch";
 import { linkSource } from "@/constants/header";
 
 export default function Header() {
+  const bg = useColorModeValue("rgba(255,255,255,0.8)", "rgba(15,15,16,0.8)");
+
   return (
     <Box
-      backgroundColor={useColorModeValue("#ffffff40", "#20202380")}
-      blur='base'
+      backgroundColor={bg}
+      backdropFilter='blur(12px)'
       w='full'
       zIndex='2'
       position='fixed'
       as='header'
+      borderBottom='1px solid'
+      borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
     >
       <Box
         width='full'
         marginInline='auto'
-        maxWidth='container.md'
+        maxWidth='container.lg'
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
         alignItems='center'
-        p={2}
+        p={3}
       >
         <Box display='flex' justifyContent='center' alignItems='center' gap='2'>
           <Logo />
