@@ -26,7 +26,7 @@ export default function LayoutCSR({ children }: { children: React.ReactNode }) {
   return (
     <DynamicChakra>
       <Header />
-      <Main as='main' p={true}>
+      <Main as='main' p={true} pt='70px'>
         {isHome && <LazyVoxelDog />}
         {children}
       </Main>
